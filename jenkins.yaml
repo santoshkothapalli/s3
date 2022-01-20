@@ -16,13 +16,11 @@ spec:  replicas: 1
         ports:
         - name: http-port
           containerPort: 8080
-        - name: jnlp-port
-          containerPort: 50000
         volumeMounts:
-        - name: jenkins-vol
-          mountPath: /var/jenkins_vol
+        - name: jenkins-volume
+          mountPath: /var/jenkins_volume
         resources: {}
       volumes:
-      - name: jenkins-vol
+      - name: jenkins-volume
         emptyDir: {}
 status: {}
