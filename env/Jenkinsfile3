@@ -6,21 +6,20 @@ pipeline {
    stages {
       parallel {
          stage('Build') {
-            environment {
-               LOG_LEVEL='INFO'
+               environment {
+                  LOG_LEVEL='INFO'
+               }
+               steps {
+                  echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
+               }
             }
-            steps {
-               echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
-            }
-        }
-        stage('Test') {
+         stage('Test') {
             steps {
                echo "Testing release ${RELEASE}"
                writeFile file: 'test-results.txt', text: 'passed'               
             }
-        }
-      }
-      
+         }
+      }     
    }
    post {
       success {
