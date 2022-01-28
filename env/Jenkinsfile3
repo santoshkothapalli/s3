@@ -4,7 +4,8 @@ pipeline {
       RELEASE='20.04'
     }
    stages {
-      stage('Build') {
+      parallel {
+         stage('Build') {
             environment {
                LOG_LEVEL='INFO'
             }
@@ -18,6 +19,8 @@ pipeline {
                writeFile file: 'test-results.txt', text: 'passed'               
             }
         }
+      }
+      
    }
    post {
       success {
