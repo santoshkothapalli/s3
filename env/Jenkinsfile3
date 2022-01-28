@@ -4,11 +4,12 @@ pipeline {
       RELEASE='20.04'
     }
    stages {
-      parallel {
-         stage('Build') {
+      stage('Build_env') {
                environment {
                   LOG_LEVEL='INFO'
                }
+      parallel {
+         stage('Build') {
                steps {
                   echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
                }
