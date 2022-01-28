@@ -8,7 +8,6 @@ pipeline {
                environment {
                   LOG_LEVEL='INFO'
                }
-            }
       parallel {
          stage('Build') {
                steps {
@@ -19,9 +18,10 @@ pipeline {
             steps {
                echo "Testing release ${RELEASE}"
                writeFile file: 'test-results.txt', text: 'passed'               
-            }
-         }
-      }     
+               }
+            } 
+         }     
+      }
    }
    post {
       success {
