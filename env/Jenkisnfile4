@@ -11,7 +11,7 @@ pipeline {
             steps {
                echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
                sh 'chmod +x env/build.sh'
-               withCredentials([string(credentialsId: 'an-api-key', variable: 'API_KEY')]) {
+               withCredentials([string(credentialsId: 'santoshkothapalli@gmail.com', variable: 'API_KEY')]) {
                   sh '''
                      .env/build.sh
                   '''
