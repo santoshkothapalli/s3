@@ -4,7 +4,7 @@ pipeline {
         PROJECT_ID = 'awesome-lotus-335801'
         CLUSTER_NAME = 'clutser-3'
         LOCATION = 'us-central1-c'
-        CREDENTIALS_ID = '<YOUR_CREDENTIAS_ID>'
+        CREDENTIALS_ID = 'gke-kubernetes'
     }
     stages {
         stage('Deploy to GKE') {
