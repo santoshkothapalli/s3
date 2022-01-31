@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         PROJECT_ID = 'awesome-lotus-335801'
-        CLUSTER_NAME = 'clutser-3'
+        CLUSTER_NAME = 'cluster-3'
         LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'gke-kubernetes'
     }
