@@ -12,7 +12,7 @@ pipeline {
             steps{
                 step(
                     withKubeConfig([credentialsId: env.CREDENTIALS_ID,
-                    clusterName: env.CLUSTER_NAME,,
+                    clusterName: env.CLUSTER_NAME,
                     namespace: env.NAMESPACE
                     ]) {
                    sh 'kubectl get pods'
