@@ -8,6 +8,17 @@ pipeline {
         NAMESPACE = 'default'
     }
     stages {
+        stage('Print Credential){
+            steps {
+               echo "Building Project ${env.PROJECT_ID} ..."
+               sh 'chmod +x build.sh'
+               withCredentials([string(credentialsId: env.CREDENTIALS_ID, variable: 'API_KEY')]) {
+                  sh '''
+                     ./build.sh
+                  '''
+               }
+            }
+        }
         stage('Deploy to GKE') {
             steps{
                 step(
