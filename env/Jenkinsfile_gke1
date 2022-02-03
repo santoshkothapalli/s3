@@ -8,7 +8,7 @@ pipeline {
         NAMESPACE = 'default'
     }
     stages {
-        stage('Print Credential){
+        stage('Print Credential'){
             steps {
                echo "Building Project ${env.PROJECT_ID} ..."
                sh 'chmod +x build.sh'
