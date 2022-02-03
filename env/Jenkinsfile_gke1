@@ -12,7 +12,7 @@ pipeline {
             steps {
                echo "Building Project ${env.PROJECT_ID} ..."
                sh 'chmod +x build.sh'
-               withCredentials([string(credentialsId: env.CREDENTIALS_ID, variable: 'API_KEY')]) {
+               withCredentials([string(credentialsId: 'sample-credential', variable: 'API_KEY')]) {
                   sh '''
                      ./build.sh
                   '''
